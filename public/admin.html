@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Fluid Pulse - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#ffecf2",
+              "on-primary-fixed": "#000000",
+              "on-primary-fixed-variant": "#5d002a",
+              "on-tertiary-fixed": "#180058",
+              "on-primary-container": "#4c0021",
+              "outline-variant": "#d79db6",
+              "secondary": "#99366c",
+              "surface-tint": "#b50058",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#ffc4dd",
+              "error": "#b31b25",
+              "tertiary": "#5e4ab3",
+              "surface-container": "#ffe0eb",
+              "tertiary-container": "#b4a4ff",
+              "surface-variant": "#ffd0e3",
+              "on-secondary": "#ffeff3",
+              "error-dim": "#9f0519",
+              "tertiary-dim": "#523da6",
+              "on-tertiary-container": "#321786",
+              "secondary-fixed": "#ffc0db",
+              "on-primary": "#ffeff1",
+              "inverse-on-surface": "#c58da5",
+              "primary-fixed-dim": "#ff5290",
+              "primary-dim": "#9f004d",
+              "primary-container": "#ff709e",
+              "background": "#fff4f6",
+              "on-secondary-container": "#802157",
+              "on-tertiary-fixed-variant": "#3b238f",
+              "on-tertiary": "#f6f0ff",
+              "surface-container-high": "#ffd8e7",
+              "tertiary-fixed": "#b4a4ff",
+              "inverse-primary": "#ff4a8d",
+              "secondary-fixed-dim": "#ffabd1",
+              "on-surface": "#4a2135",
+              "primary": "#b50058",
+              "on-secondary-fixed": "#670843",
+              "on-error-container": "#570008",
+              "secondary-dim": "#8a2a60",
+              "tertiary-fixed-dim": "#a794ff",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "secondary-container": "#ffc0db",
+              "surface": "#fff4f6",
+              "surface-container-highest": "#ffd0e3",
+              "on-background": "#4a2135",
+              "inverse-surface": "#220214",
+              "primary-fixed": "#ff709e",
+              "surface-bright": "#fff4f6",
+              "outline": "#9b687f",
+              "on-surface-variant": "#7d4d63",
+              "on-error": "#ffefee",
+              "error-container": "#fb5151"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fff4f6;
+      }
+      h1, h2, h3, .brand-font {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface bg-background">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-[#fff4f6]/80 dark:bg-neutral-950/80 backdrop-blur-xl z-50 shadow-[0_10px_30px_rgba(74,33,53,0.06)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e] text-3xl">bubble_chart</span>
+<span class="text-2xl font-bold tracking-tight text-[#b50058] dark:text-[#ff709e]">The Fluid Pulse</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 items-center mr-8">
+<a class="text-[#b50058] dark:text-[#ff709e] font-bold" href="#">Dashboard</a>
+<a class="text-[#4a2135]/60 dark:text-neutral-400 hover:bg-[#ffd0e3]/50 transition-colors px-3 py-1 rounded-lg" href="#">Logs</a>
+<a class="text-[#4a2135]/60 dark:text-neutral-400 hover:bg-[#ffd0e3]/50 transition-colors px-3 py-1 rounded-lg" href="#">Settings</a>
+</div>
+<div class="relative group">
+<img alt="Admin User Profile" class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="Professional male portrait for admin profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb7KEvI5Y4nUwZ5ztuKI8RASLP_ebNNAqo240Qx9Nto13fkxmirVXJ8lJdNgV2SlUa8ty3lXWrQZUkrLnSc9w6YUB8YMxea3CYj1eEUhe33sjuaLt1vhqrFIu8mdAmfLnRtwPK6iSf0MQk-mmooACY5fCgghS0D8eHMNfVcIDBTtffLRYnWQ9SHxshtpsq99cNUBAkCo1G3v3kbL0rkiqBkontrs5r6CqWNk7VtHkSi7XOvjux_qwV0sollfBos4XX7MLYh1yy_2lj"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary text-white rounded-full p-0.5 shadow-sm border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+</div>
+</header>
+<div class="flex pt-20 h-screen overflow-hidden">
+<!-- NavigationDrawer Shell -->
+<aside class="hidden md:flex flex-col h-full w-64 p-4 gap-2 bg-[#fff4f6] dark:bg-neutral-950 border-r-0 rounded-r-3xl">
+<div class="flex flex-col gap-1 px-4 py-6 mb-4">
+<div class="flex items-center gap-3">
+<img alt="Admin Avatar" class="w-12 h-12 rounded-2xl object-cover" data-alt="Close up avatar of system admin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAqhlzr9PlEkhH9xi2JYDW8iBZIF5tscUgtXbtYQ5_0VPpQFwaexeuMofv245ogkOyN772brikP1aQTl3S7d5f8gvQ9gMeTDWpsCzkdxr5pxvA3gBo1LaAILq6DV94B6vZq18Za3CTXqGGEIhQ0UtjdrGzPa3fWxsFuO7iLgRbIQAEpgTLBiLMzrmzuLXTw8niU9TAA7h2EPdBRZ9fPcCclGzekMiU6R5OH9HK9L1jVovfqvHA_kFLvm4h8ePHEhMkFSxY1D490I7H"/>
+<div class="flex flex-col">
+<span class="font-headline font-black text-[#b50058] text-sm">System Admin</span>
+<span class="text-xs text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Online
+                        </span>
+</div>
+</div>
+<div class="mt-2">
+<span class="text-[10px] font-bold tracking-widest text-tertiary uppercase bg-tertiary/10 px-2 py-0.5 rounded-full">Superuser</span>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="bg-[#ffd0e3] dark:bg-[#b50058]/20 text-[#b50058] dark:text-[#ff709e] font-semibold rounded-xl px-4 py-3 flex items-center gap-3 active:translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body">Dashboard</span>
+</a>
+<a class="text-[#4a2135] dark:text-neutral-400 px-4 py-3 flex items-center gap-3 hover:bg-[#ffe0eb] dark:hover:bg-neutral-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body">User Management</span>
+</a>
+<a class="text-[#4a2135] dark:text-neutral-400 px-4 py-3 flex items-center gap-3 hover:bg-[#ffe0eb] dark:hover:bg-neutral-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-body">Security Logs</span>
+</a>
+<a class="text-[#4a2135] dark:text-neutral-400 px-4 py-3 flex items-center gap-3 hover:bg-[#ffe0eb] dark:hover:bg-neutral-800 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container rounded-2xl">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter mb-2">System Health</p>
+<div class="h-1.5 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-[88%] bg-primary rounded-full"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2 text-right">88% Load</p>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-6 py-8">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Bento Stats Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_10px_30px_rgba(74,33,53,0.04)] flex flex-col justify-between border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<span class="p-3 bg-surface-container rounded-2xl text-primary">
+<span class="material-symbols-outlined">group</span>
+</span>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg">+12%</span>
+</div>
+<div class="mt-4">
+<h3 class="text-3xl font-headline font-extrabold text-on-surface">12,482</h3>
+<p class="text-sm text-on-surface-variant font-medium">Total Users</p>
+</div>
+</div>
+<div class="bg-primary-container p-6 rounded-xl shadow-[0_10px_40px_rgba(181,0,88,0.1)] flex flex-col justify-between text-on-primary-container relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">bolt</span>
+</div>
+<div class="flex justify-between items-start z-10">
+<span class="p-3 bg-white/20 backdrop-blur-md rounded-2xl">
+<span class="material-symbols-outlined">sensors</span>
+</span>
+<span class="flex items-center gap-1.5 text-xs font-bold bg-white/30 backdrop-blur-md px-2 py-1 rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Live
+                            </span>
+</div>
+<div class="mt-4 z-10">
+<h3 class="text-3xl font-headline font-extrabold text-white">1,204</h3>
+<p class="text-sm text-white/80 font-medium">Active Now</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_10px_30px_rgba(74,33,53,0.04)] flex flex-col justify-between border border-outline-variant/10">
+<div class="flex justify-between items-start">
+<span class="p-3 bg-surface-container text-tertiary rounded-2xl">
+<span class="material-symbols-outlined">flag</span>
+</span>
+<span class="text-xs font-bold text-error bg-error-container/20 px-2 py-1 rounded-lg">High</span>
+</div>
+<div class="mt-4">
+<h3 class="text-3xl font-headline font-extrabold text-on-surface">43</h3>
+<p class="text-sm text-on-surface-variant font-medium">Reports</p>
+</div>
+</div>
+</section>
+<!-- User Management Table -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_10px_40px_rgba(74,33,53,0.05)] overflow-hidden border border-outline-variant/10">
+<div class="px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container/30">
+<h2 class="text-xl font-headline font-extrabold text-on-surface">User Management</h2>
+<div class="flex gap-2 w-full md:w-auto">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-white border-0 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-on-surface-variant/40" placeholder="Search Alias..." type="text"/>
+</div>
+<button class="p-2 bg-white rounded-xl text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="text-left border-b border-surface-container text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">
+<th class="px-8 py-4">Alias</th>
+<th class="px-4 py-4">Status</th>
+<th class="px-4 py-4">Verification</th>
+<th class="px-8 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container/50">
+<!-- User Row 1 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-primary to-primary-container flex items-center justify-center text-white font-headline font-bold text-xs">
+                                                NP
+                                            </div>
+<div class="flex flex-col">
+<span class="font-semibold text-sm text-on-surface">NeonPulse_42</span>
+<span class="text-[10px] text-on-surface-variant/70 tracking-tight">ID: #92817</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                                        </span>
+</td>
+<td class="px-4 py-5">
+<span class="text-xs font-medium text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-on-surface-variant/40">pending</span>
+                                            Unverified
+                                        </span>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-surface-container text-primary font-bold text-[10px] px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-all">Verify</button>
+<button class="bg-error/5 text-error p-2 rounded-lg hover:bg-error hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 2 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-tertiary to-tertiary-container flex items-center justify-center text-white font-headline font-bold text-xs">
+                                                GK
+                                            </div>
+<div class="flex flex-col">
+<span class="font-semibold text-sm text-on-surface">GhostKing</span>
+<span class="text-[10px] text-on-surface-variant/70 tracking-tight">ID: #44012</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-surface-container text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span> Inactive
+                                        </span>
+</td>
+<td class="px-4 py-5">
+<span class="text-xs font-bold text-tertiary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                            Verified
+                                        </span>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-surface-container text-on-surface-variant/50 font-bold text-[10px] px-4 py-2 rounded-lg cursor-not-allowed">Verified</button>
+<button class="bg-error/5 text-error p-2 rounded-lg hover:bg-error hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#9c27b0] to-[#e1bee7] flex items-center justify-center text-white font-headline font-bold text-xs">
+                                                SL
+                                            </div>
+<div class="flex flex-col">
+<span class="font-semibold text-sm text-on-surface">SilentLounge</span>
+<span class="text-[10px] text-on-surface-variant/70 tracking-tight">ID: #88219</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                                        </span>
+</td>
+<td class="px-4 py-5">
+<span class="text-xs font-medium text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-on-surface-variant/40">pending</span>
+                                            Unverified
+                                        </span>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-surface-container text-primary font-bold text-[10px] px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-all">Verify</button>
+<button class="bg-error/5 text-error p-2 rounded-lg hover:bg-error hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination -->
+<div class="px-8 py-4 flex justify-between items-center border-t border-surface-container">
+<p class="text-[10px] text-on-surface-variant font-medium">Showing 1 to 3 of 12,482 users</p>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant opacity-50"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white text-[10px] font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant text-[10px] font-bold">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- BottomNavBar Shell (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-[#fff4f6]/90 dark:bg-neutral-950/90 backdrop-blur-2xl shadow-[0_-10px_40px_rgba(181,0,88,0.1)] rounded-t-[2.5rem]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white rounded-2xl p-2 min-w-[64px] scale-110 duration-300" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-medium Inter">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-neutral-500 p-2 hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[11px] font-medium Inter">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-neutral-500 p-2 hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-[11px] font-medium Inter">Security</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-neutral-500 p-2 hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-medium Inter">Account</span>
+</a>
+</nav>
+<!-- Footer Shell -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#ffe0eb] dark:bg-neutral-900 border-t-0 mt-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-bold text-[#b50058] text-xl">The Fluid Pulse</div>
+<p class="text-sm Inter tracking-wide text-[#4a2135]/70">© 2024 The Fluid Pulse. Neon Sanctuary Protocol.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-[#4a2135]/70 hover:text-[#b50058] underline text-[#b50058] transition-colors text-sm Inter tracking-wide opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="text-[#4a2135]/70 hover:text-[#b50058] transition-colors text-sm Inter tracking-wide opacity-80 hover:opacity-100" href="#">Terms</a>
+<a class="text-[#4a2135]/70 hover:text-[#b50058] transition-colors text-sm Inter tracking-wide opacity-80 hover:opacity-100" href="#">Safety</a>
+<a class="text-[#4a2135]/70 hover:text-[#b50058] transition-colors text-sm Inter tracking-wide opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</footer>
+</body></html>
