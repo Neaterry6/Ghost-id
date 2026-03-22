@@ -10,7 +10,95 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">const apiKey = 'qasim-dev';
+        const apiUrl = 'https://api.qasimdev.dpdns.org/api/wallpaper/search';
+        const grid = document.getElementById('wallpaper-grid');
+        const loader = document.getElementById('loading-state');
+        const emptyState = document.getElementById('empty-state');
+        const searchInput = document.getElementById('search-input');
+        const modal = document.getElementById('preview-modal');
+        const modalImg = document.getElementById('modal-img');
+        const toast = document.getElementById('toast');
+
+        async function fetchWallpapers(query = 'abstract neon') {
+            const q = query || searchInput.value || 'abstract neon';
+            
+            grid.innerHTML = '';
+            emptyState.classList.add('hidden');
+            loader.classList.remove('hidden');
+
+            try {
+                const response = await fetch(`${apiUrl}?q=${encodeURIComponent(q)}&apiKey=${apiKey}`);
+                const data = await response.json();
+
+                loader.classList.add('hidden');
+
+                if (data && data.length > 0) {
+                    data.forEach((wp, index) => {
+                        const card = document.createElement('div');
+                        const isLarge = index % 5 === 0;
+                        card.className = `group relative rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${isLarge ? 'col-span-2 row-span-2' : ''}`;
+                        card.innerHTML = `
+                            <img alt="Wallpaper" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wallpaper image ${wp.description || 'vibrant aesthetic'}" src="${wp.url}"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-white font-headline font-bold text-sm tracking-wide">VIEW PREVIEW</span>
+</div>
+<button class="absolute bottom-3 right-3 z-20 w-10 h-10 bg-gradient-to-br from-primary to-primary-container text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 active:scale-90" onclick="downloadImage(event, '${wp.url}')" title="Download Wallpaper">
+<span class="material-symbols-outlined">download</span>
+</button>
+                        `;
+                        card.onclick = () => openModal(wp.url);
+                        grid.appendChild(card);
+                    });
+                } else {
+                    emptyState.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('API Error:', error);
+                loader.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+            }
+        }
+
+        function downloadImage(event, url) {
+            event.stopPropagation();
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'wallpaper-' + Date.now() + '.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function quickSearch(tag) {
+            searchInput.value = tag;
+            fetchWallpapers(tag);
+        }
+
+        function openModal(url) {
+            modalImg.src = url;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function confirmSet() {
+            closeModal();
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') fetchWallpapers();
+        });
+
+        window.onload = () => fetchWallpapers('abstract neon');</script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -91,7 +179,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+</head>
 <body class="bg-surface text-on-surface font-body min-h-screen pb-32">
 <!-- Top Navigation Bar (Shared Component Logic) -->
 <header class="sticky top-0 z-50 bg-[#fff4f6]/80 backdrop-blur-lg shadow-[0_10px_30px_rgba(74,33,53,0.06)] rounded-b-[2rem] px-6 py-4 flex justify-between items-center w-full">
@@ -192,8 +280,7 @@
 <span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider mt-1">Settings</span>
 </button>
 </nav>
-<script>
-        const apiKey = 'qasim-dev';
+<script>const apiKey = 'qasim-dev';
         const apiUrl = 'https://api.qasimdev.dpdns.org/api/wallpaper/search';
         const grid = document.getElementById('wallpaper-grid');
         const loader = document.getElementById('loading-state');
@@ -219,14 +306,16 @@
                 if (data && data.length > 0) {
                     data.forEach((wp, index) => {
                         const card = document.createElement('div');
-                        // Bento grid asymmetric logic
                         const isLarge = index % 5 === 0;
                         card.className = `group relative rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${isLarge ? 'col-span-2 row-span-2' : ''}`;
                         card.innerHTML = `
-                            <img src="${wp.url}" alt="Wallpaper" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wallpaper image ${wp.description || 'vibrant aesthetic'}">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                <span class="text-white font-headline font-bold text-sm tracking-wide">VIEW PREVIEW</span>
-                            </div>
+                            <img alt="Wallpaper" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wallpaper image ${wp.description || 'vibrant aesthetic'}" src="${wp.url}"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+<span class="text-white font-headline font-bold text-sm tracking-wide">VIEW PREVIEW</span>
+</div>
+<button class="absolute bottom-3 right-3 z-20 w-10 h-10 bg-gradient-to-br from-primary to-primary-container text-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 active:scale-90" onclick="downloadImage(event, '${wp.url}')" title="Download Wallpaper">
+<span class="material-symbols-outlined">download</span>
+</button>
                         `;
                         card.onclick = () => openModal(wp.url);
                         grid.appendChild(card);
@@ -239,6 +328,16 @@
                 loader.classList.add('hidden');
                 emptyState.classList.remove('hidden');
             }
+        }
+
+        function downloadImage(event, url) {
+            event.stopPropagation();
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'wallpaper-' + Date.now() + '.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         function quickSearch(tag) {
@@ -269,7 +368,5 @@
             if (e.key === 'Enter') fetchWallpapers();
         });
 
-        // Initial Load
-        window.onload = () => fetchWallpapers('abstract neon');
-    </script>
+        window.onload = () => fetchWallpapers('abstract neon');</script>
 </body></html>
