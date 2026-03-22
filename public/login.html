@@ -3,95 +3,88 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Anon Chat - Secure Login</title>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+<title>Anon Chat - Enter Sanctuary</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "inverse-surface": "#220214",
-              "on-primary": "#ffeff1",
-              "on-tertiary-container": "#321786",
-              "on-primary-container": "#4c0021",
-              "surface-container-highest": "#ffd0e3",
-              "primary-fixed-dim": "#ff5290",
-              "secondary-container": "#ffc0db",
-              "primary-fixed": "#ff709e",
-              "on-tertiary-fixed": "#180058",
-              "background": "#fff4f6",
-              "error": "#b31b25",
-              "primary-container": "#ff709e",
-              "on-secondary-fixed": "#670843",
-              "tertiary-fixed": "#b4a4ff",
-              "on-secondary": "#ffeff3",
-              "on-secondary-container": "#802157",
-              "secondary": "#99366c",
-              "tertiary": "#5e4ab3",
-              "on-background": "#4a2135",
-              "surface-container-high": "#ffd8e7",
-              "on-surface": "#4a2135",
-              "secondary-dim": "#8a2a60",
-              "surface-bright": "#fff4f6",
-              "on-surface-variant": "#7d4d63",
-              "surface-variant": "#ffd0e3",
-              "tertiary-container": "#b4a4ff",
-              "inverse-primary": "#ff4a8d",
-              "outline-variant": "#d79db6",
-              "on-secondary-fixed-variant": "#8c2b61",
-              "secondary-fixed": "#ffc0db",
-              "inverse-on-surface": "#c58da5",
-              "on-primary-fixed-variant": "#5d002a",
-              "surface-container-lowest": "#ffffff",
-              "on-primary-fixed": "#000000",
-              "outline": "#9b687f",
-              "tertiary-fixed-dim": "#a794ff",
-              "primary": "#b50058",
-              "surface": "#fff4f6",
-              "error-dim": "#9f0519",
-              "secondary-fixed-dim": "#ffabd1",
-              "error-container": "#fb5151",
-              "primary-dim": "#9f004d",
-              "surface-container-low": "#ffecf2",
-              "on-error": "#ffefee",
-              "tertiary-dim": "#523da6",
-              "surface-tint": "#b50058",
-              "surface-container": "#ffe0eb",
-              "on-error-container": "#570008",
-              "on-tertiary": "#f6f0ff",
-              "surface-dim": "#ffc4dd",
-              "on-tertiary-fixed-variant": "#3b238f"
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#d79db6",
+                        "secondary": "#99366c",
+                        "on-tertiary": "#f6f0ff",
+                        "on-tertiary-fixed": "#180058",
+                        "secondary-container": "#ffc0db",
+                        "on-secondary": "#ffeff3",
+                        "error-container": "#fb5151",
+                        "primary-fixed-dim": "#ff5290",
+                        "tertiary-fixed-dim": "#a794ff",
+                        "surface-dim": "#ffc4dd",
+                        "on-secondary-fixed": "#670843",
+                        "on-tertiary-container": "#321786",
+                        "outline": "#9b687f",
+                        "inverse-primary": "#ff4a8d",
+                        "background": "#fff4f6",
+                        "secondary-fixed-dim": "#ffabd1",
+                        "on-primary-container": "#4c0021",
+                        "on-background": "#4a2135",
+                        "on-error": "#ffefee",
+                        "tertiary-dim": "#523da6",
+                        "surface-container-highest": "#ffd0e3",
+                        "on-secondary-fixed-variant": "#8c2b61",
+                        "inverse-on-surface": "#c58da5",
+                        "secondary-fixed": "#ffc0db",
+                        "on-secondary-container": "#802157",
+                        "on-primary-fixed-variant": "#5d002a",
+                        "tertiary-container": "#b4a4ff",
+                        "surface-container-high": "#ffd8e7",
+                        "surface-container-low": "#ffecf2",
+                        "surface-container": "#ffe0eb",
+                        "on-error-container": "#570008",
+                        "secondary-dim": "#8a2a60",
+                        "surface": "#fff4f6",
+                        "inverse-surface": "#220214",
+                        "on-surface-variant": "#7d4d63",
+                        "error-dim": "#9f0519",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#4a2135",
+                        "error": "#b31b25",
+                        "primary-container": "#ff709e",
+                        "surface-tint": "#b50058",
+                        "primary": "#b50058",
+                        "on-primary": "#ffeff1",
+                        "primary-dim": "#9f004d",
+                        "on-tertiary-fixed-variant": "#3b238f",
+                        "surface-variant": "#ffd0e3",
+                        "tertiary": "#5e4ab3",
+                        "primary-fixed": "#ff709e",
+                        "surface-bright": "#fff4f6",
+                        "tertiary-fixed": "#b4a4ff",
+                        "on-primary-fixed": "#000000"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
             },
-            fontFamily: {
-              "headline": ["Plus Jakarta Sans"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-          },
-        },
-      }
+        }
     </script>
 <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .neon-glow {
-        box-shadow: 0 0 40px rgba(181, 0, 88, 0.1);
-      }
-      .glass-card {
-        background: rgba(255, 244, 246, 0.8);
-        backdrop-filter: blur(20px);
-      }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 244, 246, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
     </style>
 <style>
     body {
@@ -99,90 +92,94 @@
     }
   </style>
   </head>
-<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col overflow-x-hidden">
-<!-- Header / TopAppBar Section -->
-<header class="bg-[#fff4f6] dark:bg-[#1a0b12] fixed top-0 z-50 flex justify-between items-center w-full px-6 h-16">
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Bar (Shared Component Style Mapping) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 glass-panel shadow-[0_10px_30px_rgba(74,33,53,0.06)]">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e]" style="font-variation-settings: 'FILL' 1;">security</span>
-<span class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-2xl font-black text-[#b50058] dark:text-[#ff709e] tracking-tighter">Anon Chat</span>
+<span class="text-2xl font-black bg-gradient-to-r from-[#b50058] to-[#ff709e] bg-clip-text text-transparent font-headline">Anon Chat</span>
 </div>
-<button class="p-2 rounded-full hover:bg-[#ffd0e3]/50 dark:hover:bg-[#4a2135]/50 transition-colors active:scale-95 transition-transform duration-200">
-<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e]">light_mode</span>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
 </button>
+</div>
 </header>
 <main class="flex-grow flex items-center justify-center px-6 pt-24 pb-12 relative">
-<!-- Abstract Background Orbs -->
-<div class="absolute top-1/4 -left-20 w-80 h-80 bg-primary-container/20 rounded-full blur-[100px] pointer-events-none"></div>
-<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-tertiary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
-<div class="w-full max-w-md z-10">
-<!-- Hero / Branding Section -->
+<!-- Background Decorative Elements -->
+<div class="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-primary-container/20 rounded-full blur-[100px] -z-10"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[350px] h-[350px] bg-tertiary-container/20 rounded-full blur-[80px] -z-10"></div>
+<div class="max-w-md w-full flex flex-col items-center">
+<!-- Hero Content -->
 <div class="text-center mb-12">
-<div class="inline-flex items-center justify-center p-6 bg-surface-container rounded-xl neon-glow mb-6 relative">
-<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1;">shield_person</span>
-<div class="absolute -top-2 -right-2 w-6 h-6 bg-tertiary rounded-full animate-pulse"></div>
+<div class="inline-flex items-center justify-center p-4 bg-surface-container-high rounded-xl mb-6 shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
 </div>
-<h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-2">Welcome Back</h1>
-<p class="text-on-surface-variant font-medium opacity-80">Enter your alias to re-join the pulse.</p>
+<h1 class="font-headline text-5xl font-extrabold tracking-tight text-on-surface mb-4 leading-tight">
+                    Where whispers find <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">color.</span>
+</h1>
+<p class="text-on-surface-variant font-medium opacity-80 max-w-xs mx-auto">
+                    Experience the pulse of anonymous connection in a secure, neon-lit sanctuary.
+                </p>
 </div>
-<!-- Login Form Card -->
-<div class="glass-card p-8 rounded-lg shadow-none ring-1 ring-outline-variant/15 flex flex-col gap-6">
-<!-- Input Group: Alias -->
+<!-- Login Card -->
+<div class="w-full bg-surface-container-lowest/40 backdrop-blur-md rounded-xl p-8 shadow-[0_20px_60px_rgba(181,0,88,0.05)] border border-outline-variant/10">
+<form class="space-y-6">
+<!-- Alias Field -->
 <div class="space-y-2">
-<label class="font-label text-sm font-bold text-on-surface px-1">ALIAS</label>
+<label class="block font-headline font-bold text-sm text-on-surface-variant px-1" for="alias">Choose your Alias</label>
 <div class="relative group">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">alternate_email</span>
-<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/30 text-on-surface placeholder:text-outline-variant transition-all font-medium" placeholder="your_secret_tag" type="text"/>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant/60 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="face">face</span>
+</div>
+<input class="w-full pl-11 pr-4 py-4 bg-surface-container-low border-0 rounded-lg focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all text-on-surface font-medium placeholder:text-on-surface-variant/40" id="alias" placeholder="NeonSpecter" type="text"/>
 </div>
 </div>
-<!-- Input Group: Secret Key -->
+<!-- Secret Key Field -->
 <div class="space-y-2">
-<label class="font-label text-sm font-bold text-on-surface px-1">SECRET KEY</label>
+<label class="block font-headline font-bold text-sm text-on-surface-variant px-1" for="secret">Secret Key</label>
 <div class="relative group">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">key</span>
-<input class="w-full pl-12 pr-12 py-4 bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/30 text-on-surface placeholder:text-outline-variant transition-all font-medium" placeholder="••••••••" type="password"/>
-<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors">
-<span class="material-symbols-outlined">visibility</span>
-</button>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant/60 group-focus-within:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="key">key</span>
+</div>
+<input class="w-full pl-11 pr-4 py-4 bg-surface-container-low border-0 rounded-lg focus:ring-2 focus:ring-tertiary/20 focus:bg-surface-container-lowest transition-all text-on-surface font-medium placeholder:text-on-surface-variant/40" id="secret" placeholder="••••••••••••" type="password"/>
 </div>
 </div>
-<!-- Action Button -->
-<div class="pt-4">
-<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold text-lg rounded-full shadow-lg hover:shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
-                        Enter Sanctuary
-                        <span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-<!-- Security Accents -->
+<!-- Security Badge -->
 <div class="flex items-center justify-center gap-2 py-2">
-<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">lock</span>
-<span class="font-label text-[10px] font-bold uppercase tracking-widest text-tertiary opacity-80">End-to-End Encrypted Pulse</span>
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="verified_user">verified_user</span>
+<span class="text-[11px] font-bold font-label uppercase tracking-widest text-on-surface-variant/70">E2E Encrypted Session</span>
 </div>
+<!-- CTA Button -->
+<button class="w-full py-5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-extrabold text-lg shadow-[0_10px_30px_rgba(181,0,88,0.25)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3">
+                        Enter Sanctuary
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
 </div>
-<!-- Secondary Actions -->
+<!-- Bottom Links -->
 <div class="mt-8 flex flex-col items-center gap-4">
-<a class="font-headline font-bold text-primary hover:text-primary-dim transition-colors flex items-center gap-1 group" href="#">
-                    Create Identity
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">add_circle</span>
-</a>
-<div class="w-12 h-1 bg-surface-container-highest rounded-full"></div>
-<p class="text-on-surface-variant font-medium text-sm">Lost your secret key?</p>
-<button class="text-xs font-bold uppercase tracking-tighter text-outline-variant hover:text-on-surface transition-colors">Wipe Local Instance</button>
+<button class="text-on-surface-variant font-label text-sm font-semibold hover:text-primary transition-colors">
+                    Lost your secret key?
+                </button>
+<div class="h-px w-12 bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 text-xs font-bold text-on-surface-variant/50 tracking-wide">
+<span>VIBRANT</span>
+<span class="w-1 h-1 rounded-full bg-primary/30"></span>
+<span>PRIVATE</span>
+<span class="w-1 h-1 rounded-full bg-primary/30"></span>
+<span>SECURE</span>
+</div>
 </div>
 </div>
 </main>
-<!-- Visual Polish: Floating Bubbles -->
-<div class="fixed bottom-12 -left-8 pointer-events-none opacity-50">
-<div class="w-24 h-24 rounded-xl bg-surface-container-highest rotate-12 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-container">chat_bubble</span>
-</div>
-</div>
-<div class="fixed top-32 -right-8 pointer-events-none opacity-50">
-<div class="w-32 h-32 rounded-full bg-surface-container-high -rotate-12 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary opacity-20 text-5xl">fingerprint</span>
-</div>
-</div>
-<!-- Background Decoration -->
-<div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-<div class="absolute w-[200%] h-[200%] top-[-50%] left-[-50%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-container-low via-surface to-surface opacity-40"></div>
+<!-- Footer Space -->
+<footer class="py-8 px-6 text-center">
+<p class="text-[10px] font-bold tracking-[0.2em] text-on-surface-variant/40 uppercase">
+            © 2024 Anon Chat Sanctuary Protocol
+        </p>
+</footer>
+<!-- Abstract Gradient Background Element -->
+<div class="fixed inset-0 pointer-events-none -z-50 opacity-40">
+<div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,#ff709e_0%,transparent_50%),radial-gradient(circle_at_bottom_left,#b4a4ff_0%,transparent_40%)]"></div>
 </div>
 </body></html>
