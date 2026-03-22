@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anon Chat - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#220214",
+              "on-primary": "#ffeff1",
+              "on-tertiary-container": "#321786",
+              "on-primary-container": "#4c0021",
+              "surface-container-highest": "#ffd0e3",
+              "primary-fixed-dim": "#ff5290",
+              "secondary-container": "#ffc0db",
+              "primary-fixed": "#ff709e",
+              "on-tertiary-fixed": "#180058",
+              "background": "#fff4f6",
+              "error": "#b31b25",
+              "primary-container": "#ff709e",
+              "on-secondary-fixed": "#670843",
+              "tertiary-fixed": "#b4a4ff",
+              "on-secondary": "#ffeff3",
+              "on-secondary-container": "#802157",
+              "secondary": "#99366c",
+              "tertiary": "#5e4ab3",
+              "on-background": "#4a2135",
+              "surface-container-high": "#ffd8e7",
+              "on-surface": "#4a2135",
+              "secondary-dim": "#8a2a60",
+              "surface-bright": "#fff4f6",
+              "on-surface-variant": "#7d4d63",
+              "surface-variant": "#ffd0e3",
+              "tertiary-container": "#b4a4ff",
+              "inverse-primary": "#ff4a8d",
+              "outline-variant": "#d79db6",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "secondary-fixed": "#ffc0db",
+              "inverse-on-surface": "#c58da5",
+              "on-primary-fixed-variant": "#5d002a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#000000",
+              "outline": "#9b687f",
+              "tertiary-fixed-dim": "#a794ff",
+              "primary": "#b50058",
+              "surface": "#fff4f6",
+              "error-dim": "#9f0519",
+              "secondary-fixed-dim": "#ffabd1",
+              "error-container": "#fb5151",
+              "primary-dim": "#9f004d",
+              "surface-container-low": "#ffecf2",
+              "on-error": "#ffefee",
+              "tertiary-dim": "#523da6",
+              "surface-tint": "#b50058",
+              "surface-container": "#ffe0eb",
+              "on-error-container": "#570008",
+              "on-tertiary": "#f6f0ff",
+              "surface-dim": "#ffc4dd",
+              "on-tertiary-fixed-variant": "#3b238f"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .headline-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fff4f6] dark:bg-[#1a0b12] docked full-width top-0 z-50 shadow-none fixed w-full">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e]" data-icon="security">security</span>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-2xl font-black text-[#b50058] dark:text-[#ff709e] tracking-tighter">Anon Chat</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#ffd0e3]/50 dark:hover:bg-[#4a2135]/50 transition-colors active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e]" data-icon="light_mode">light_mode</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Profile Header Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-lg flex items-center gap-6">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-container p-1 shadow-lg shadow-primary/20">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="person">person</span>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 w-6 h-6 bg-tertiary rounded-full border-2 border-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-tertiary" data-icon="edit">edit</span>
+</div>
+</div>
+<div>
+<h2 class="headline-font text-2xl font-bold tracking-tight text-on-surface">Anonymous User</h2>
+<p class="text-sm text-on-surface-variant font-medium">@anon_4829</p>
+</div>
+</div>
+<div class="bg-primary p-6 rounded-lg flex flex-col justify-between text-on-primary">
+<span class="material-symbols-outlined text-3xl opacity-50" data-icon="verified_user">verified_user</span>
+<p class="headline-font font-bold text-lg leading-tight">Pro Shield Active</p>
+</div>
+</section>
+<!-- Settings List -->
+<div class="space-y-4">
+<!-- Account Section -->
+<div class="bg-surface-container rounded-lg overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/10">
+<h3 class="headline-font font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+                        Account
+                    </h3>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<button class="w-full px-6 py-4 flex items-center justify-between hover:bg-surface-container-high transition-colors text-left group">
+<span class="font-medium">Profile Information</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full px-6 py-4 flex items-center justify-between hover:bg-surface-container-high transition-colors text-left group">
+<span class="font-medium">Email Address</span>
+<div class="flex items-center gap-2">
+<span class="text-sm text-on-surface-variant">anon***@vault.com</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Privacy Section -->
+<div class="bg-surface-container rounded-lg overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/10">
+<h3 class="headline-font font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="lock">lock</span>
+                        Privacy
+                    </h3>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<div class="px-6 py-4 flex items-center justify-between">
+<div>
+<p class="font-medium">Stealth Mode</p>
+<p class="text-xs text-on-surface-variant">Hide your online status from everyone</p>
+</div>
+<div class="w-12 h-6 bg-primary-container rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<button class="w-full px-6 py-4 flex items-center justify-between hover:bg-surface-container-high transition-colors text-left group">
+<span class="font-medium">Blocked Contacts</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Appearance Section -->
+<div class="bg-surface-container rounded-lg overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/10">
+<h3 class="headline-font font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="palette">palette</span>
+                        Appearance
+                    </h3>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-primary bg-surface-container-lowest">
+<div class="w-full h-12 rounded-lg bg-[#fff4f6] flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="light_mode">light_mode</span>
+</div>
+<span class="font-bold text-sm">Light</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-transparent bg-inverse-surface/10">
+<div class="w-full h-12 rounded-lg bg-[#1a0b12] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#ffd0e3]" data-icon="dark_mode">dark_mode</span>
+</div>
+<span class="font-bold text-sm opacity-50">Dark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notifications Section -->
+<div class="bg-surface-container rounded-lg overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/10">
+<h3 class="headline-font font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="notifications">notifications</span>
+                        Notifications
+                    </h3>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<div class="px-6 py-4 flex items-center justify-between">
+<span class="font-medium">Push Notifications</span>
+<div class="w-12 h-6 bg-outline-variant/30 rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="pt-4 flex flex-col gap-4">
+<button class="w-full h-14 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Logout
+                </button>
+<button class="w-full py-4 text-error font-bold text-sm hover:underline">
+                    Delete Account Permanentely
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#fff4f6]/80 dark:bg-[#1a0b12]/80 backdrop-blur-xl rounded-t-[2.5rem] shadow-[0_-10px_30px_rgba(74,33,53,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#ffd0e3]/40 p-3 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">DMs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#ffd0e3]/40 p-3 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Groups</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#ffd0e3]/40 p-3 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white rounded-full p-3 mb-1 animate-pulse-slow active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider hidden">Settings</span>
+</a>
+</nav>
+</body></html>
