@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -91,13 +90,20 @@
         background: rgba(255, 244, 246, 0.8);
         backdrop-filter: blur(20px);
       }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
 <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+</head>
 <body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopAppBar -->
 <nav class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-[#fff4f6]/80 dark:bg-neutral-950/80 backdrop-blur-xl z-50 shadow-[0_10px_30px_rgba(74,33,53,0.06)]">
@@ -229,6 +235,111 @@
 <div class="w-8 h-24 bg-primary rounded-full blur-[1px] opacity-20"></div>
 <div class="w-8 h-32 bg-secondary rounded-full blur-[1px] opacity-40 -mt-4"></div>
 <div class="w-8 h-24 bg-tertiary rounded-full blur-[1px] opacity-20"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Profiles Section -->
+<section class="py-24 px-6 overflow-hidden bg-background">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+<div class="space-y-4">
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Featured Profiles</h2>
+<p class="text-on-surface-variant max-w-xl">Meet the curators of the most vibrant sanctuaries on the network. Verified voices leading the future of private social spaces.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="w-12 h-12 rounded-full border-2 border-primary/20 flex items-center justify-center text-primary hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 no-scrollbar -mx-6 px-6">
+<!-- Profile Card 1 -->
+<div class="flex-shrink-0 w-[280px] group">
+<div class="bg-surface-container-highest p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-6">
+<img alt="Elena's Profile" class="w-full h-full object-cover" data-alt="Modern high fashion portrait of a woman with pink tinted glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6n08xmuE5vJ3gGhglOOeNzXrx9Rm3VXUqqIfglTTLKNBoCGAzVTXxVhg0tJAQf0aT-amHvjJccIXjwiVVqzFzlj-uG3j4NBbBoLLEoA-J9H7tcHHX_S9bWOWnv3_sEcmBLWeLki1wrQTIyDKIxQKN7UpXJwNdEy6HufVe8_qKa9pzq6jvcHFkE2-TBdY7e0Ceg8AtGvwDZJZCNoKoEyhz0-Jilna3_KaZ9UXhl7B4W1gN0KB3FkHBpOEU5hykABWcCxstzWKvk0HI"/>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary fill-1" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[11px] font-bold text-on-surface uppercase tracking-wider">Verified Curator</span>
+</div>
+</div>
+<div class="space-y-1">
+<h4 class="text-xl font-bold text-on-surface">@Neon_Muse</h4>
+<p class="text-sm text-on-surface-variant">The Cyber Lounge Sanctuary</p>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="text-[10px] font-bold text-primary uppercase tracking-widest px-2 py-1 bg-primary/10 rounded-full">Trending Pulse</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+<span class="text-xs font-semibold">2.4k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Card 2 -->
+<div class="flex-shrink-0 w-[280px] group">
+<div class="bg-surface-container-highest p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-6">
+<img alt="Marcus's Profile" class="w-full h-full object-cover" data-alt="Smiling black man with stylish glasses in warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHa_UxhnssqxeetmyvvssqvSGMUnNEH-kuG9DkGtALBhtohhMQJrrSdG8g3LbXuzOYrjRTHv6oSPx9jcSScEBCm_iQiCjZTbNLBQHYvX88hXqqfr99EPmgigY5yFQNgU5i_slCD0b6PlEmzruOdpbukJ_5a8OMB4XF_C6aenDe8ysRlCSWtuyEOj2P6BaAzWtZtRhEYvohSmy5nj-X_4J3HQy8bQfF68Fds0YH5PxuhC936nInA4WvFaG7SvOIaQzmROEAIgKQjDQ2"/>
+</div>
+<div class="space-y-1">
+<h4 class="text-xl font-bold text-on-surface">@Solar_Flow</h4>
+<p class="text-sm text-on-surface-variant">Morning Rituals Community</p>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="text-[10px] font-bold text-secondary uppercase tracking-widest px-2 py-1 bg-secondary/10 rounded-full">Most Active</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+<span class="text-xs font-semibold">1.8k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Card 3 -->
+<div class="flex-shrink-0 w-[280px] group">
+<div class="bg-surface-container-highest p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-6">
+<img alt="Yuki's Profile" class="w-full h-full object-cover" data-alt="Trendy East Asian young man with colored hair looking at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvrdMAXFqRpliqImoAnYTluz2rNSpXai0qiyIhZrXvBawx2PX7Z4HFxr8utNKWj-RizXoSXsKDkIfcXywBhiRVWfy2ZYOqc523usFe_dWlGIACwUFh2ej_xwuoTBl6aU_hg3c13dOlhCOF-2indGYlWW7juKT6v74Y7ZIHBVtiBrhMRRaD0FggzWLlB4F2IyIFADNqUf3FIPydkxZ90KXOgU-BnETKLJa4Ra0W5r4OUEPWhYBlkwLWb6Lo_OG3G4WdYin3NKuHcox1"/>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary fill-1" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[11px] font-bold text-on-surface uppercase tracking-wider">Top Creator</span>
+</div>
+</div>
+<div class="space-y-1">
+<h4 class="text-xl font-bold text-on-surface">@Echo_Drift</h4>
+<p class="text-sm text-on-surface-variant">Sound &amp; Vision Protocol</p>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="text-[10px] font-bold text-tertiary uppercase tracking-widest px-2 py-1 bg-tertiary/10 rounded-full">Featured</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+<span class="text-xs font-semibold">4.2k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Card 4 -->
+<div class="flex-shrink-0 w-[280px] group">
+<div class="bg-surface-container-highest p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-primary/20">
+<div class="relative w-full aspect-square rounded-lg overflow-hidden mb-6">
+<img alt="Zara's Profile" class="w-full h-full object-cover" data-alt="Creative woman in an artistic studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_bdwkuDOLU92BfYAY5VJg4oedDPuKs1IZTSuP8ZATataZcDArta1VLjJrwLTiU_5X1ksr8qG-5t_u5nyJYL6zkfHAONhIb2H2scZFx3yb75Ewhfz-67qzq7Obn10fjeDfaLSQdxzdVnE7Xu3Pm3fEv_ytiYnk3PYHPSk0MVlmjE4uPogEL308IYTyiuP3GK6R8se3Zg6s9Mdg0LMLnO-qKvXv9-2ZayTVStC7jEeTJzGQGTWn2hj5SN3T4hV9VKwNBr6XQjU1JmFt"/>
+</div>
+<div class="space-y-1">
+<h4 class="text-xl font-bold text-on-surface">@Lumina_Vibe</h4>
+<p class="text-sm text-on-surface-variant">The Zen Collective</p>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="text-[10px] font-bold text-primary uppercase tracking-widest px-2 py-1 bg-primary/10 rounded-full">New Arrival</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span>
+<span class="text-xs font-semibold">940</span>
 </div>
 </div>
 </div>
