@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Find Friends - Anon Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#d79db6",
+              "secondary": "#99366c",
+              "on-tertiary": "#f6f0ff",
+              "on-tertiary-fixed": "#180058",
+              "secondary-container": "#ffc0db",
+              "on-secondary": "#ffeff3",
+              "error-container": "#fb5151",
+              "primary-fixed-dim": "#ff5290",
+              "tertiary-fixed-dim": "#a794ff",
+              "surface-dim": "#ffc4dd",
+              "on-secondary-fixed": "#670843",
+              "on-tertiary-container": "#321786",
+              "outline": "#9b687f",
+              "inverse-primary": "#ff4a8d",
+              "background": "#fff4f6",
+              "secondary-fixed-dim": "#ffabd1",
+              "on-primary-container": "#4c0021",
+              "on-background": "#4a2135",
+              "on-error": "#ffefee",
+              "tertiary-dim": "#523da6",
+              "surface-container-highest": "#ffd0e3",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "inverse-on-surface": "#c58da5",
+              "secondary-fixed": "#ffc0db",
+              "on-secondary-container": "#802157",
+              "on-primary-fixed-variant": "#5d002a",
+              "tertiary-container": "#b4a4ff",
+              "surface-container-high": "#ffd8e7",
+              "surface-container-low": "#ffecf2",
+              "surface-container": "#ffe0eb",
+              "on-error-container": "#570008",
+              "secondary-dim": "#8a2a60",
+              "surface": "#fff4f6",
+              "inverse-surface": "#220214",
+              "on-surface-variant": "#7d4d63",
+              "error-dim": "#9f0519",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#4a2135",
+              "error": "#b31b25",
+              "primary-container": "#ff709e",
+              "surface-tint": "#b50058",
+              "primary": "#b50058",
+              "on-primary": "#ffeff1",
+              "primary-dim": "#9f004d",
+              "on-tertiary-fixed-variant": "#3b238f",
+              "surface-variant": "#ffd0e3",
+              "tertiary": "#5e4ab3",
+              "primary-fixed": "#ff709e",
+              "surface-bright": "#fff4f6",
+              "tertiary-fixed": "#b4a4ff",
+              "on-primary-fixed": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .bg-glass { backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#fff4f6]/80 dark:bg-[#1a1114]/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(74,33,53,0.06)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
+<img alt="User avatar profile" class="w-full h-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3jfBk3awsUK8HAE-DAtWLsOWy7lRYZtblfsliX8Qj4foJ43WewVLg0OspaLwp3IeOZMrT5nj30YhgMYsJfZMWVLc9Feohb5DyuGBNToDr6Ua9XC6z1tI17MrZ8LrX1_hOGsKw9Um05zrsPQKjqvmqFzmv6tyzhrxsznOoI1l-GJASfRCTebvkHhYvQhnNeFFJ3dY607-Ko45HJYupkL3V36gbZ5CtZGwq1ivB3QKTgi0pXxSu1eiiFPBxbLqYbOW54uhhyHlaIbeL"/>
+</div>
+<h1 class="text-2xl font-black bg-gradient-to-r from-[#b50058] to-[#ff709e] bg-clip-text text-transparent font-['Plus_Jakarta_SANS'] tracking-tight">Anon Chat</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-[#b50058] dark:text-[#ff709e] hover:opacity-80 transition-opacity active:scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Search Section -->
+<section class="space-y-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full py-4 pl-12 pr-6 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/30 transition-all font-body text-on-surface placeholder:text-on-surface-variant/60 outline-none shadow-sm" placeholder="Search for new vibes..." type="text"/>
+</div>
+</section>
+<!-- Categories / Chips -->
+<section class="overflow-x-auto no-scrollbar -mx-6 px-6">
+<div class="flex gap-3 pb-2">
+<button class="flex items-center gap-2 bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white px-6 py-2.5 rounded-full whitespace-nowrap font-label font-semibold shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+                    Discover
+                </button>
+<button class="flex items-center gap-2 bg-surface-container-high text-on-surface px-6 py-2.5 rounded-full whitespace-nowrap font-label font-semibold hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+                    Nearby
+                </button>
+<button class="flex items-center gap-2 bg-surface-container-high text-on-surface px-6 py-2.5 rounded-full whitespace-nowrap font-label font-semibold hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+                    Interests
+                </button>
+<button class="flex items-center gap-2 bg-surface-container-high text-on-surface px-6 py-2.5 rounded-full whitespace-nowrap font-label font-semibold hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+                    New
+                </button>
+</div>
+</section>
+<!-- Featured Suggestions (Asymmetric Bento) -->
+<section class="space-y-4">
+<h2 class="font-headline font-bold text-xl text-on-surface px-1">Suggested for you</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- User Card 1 -->
+<div class="col-span-1 row-span-1 bg-surface-container-lowest p-5 rounded-lg flex flex-col items-center text-center space-y-3 shadow-[0_10px_30px_rgba(74,33,53,0.03)] border border-outline-variant/10">
+<div class="relative">
+<img alt="User" class="w-20 h-20 rounded-full object-cover" data-alt="Portrait of a friendly person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADnreemHHxp8t9QUpnH1jmk7MeU7KoymILOo2SDcKli3brgO1sk2wNnbbQaGXxujOb0FlVaaQRJa07B3gkhRWgahf6GYl6EBYLaHnqK3ErNyDAsbUi3igNOhiY-LNAP1ihFQj6Oj08xoWpFSDHNM2emWZcUdU8h9srngZCMdE8LIVqH3xlurA8lk5EU3k49OfrjJq7kslDk75--uY3eJehOV61Sigtn9hOae08IF_61vxt2eDK-lY5ET_w7cYY7CPhMeoAUmowdbYc"/>
+<div class="absolute bottom-0 right-0 bg-tertiary text-white w-6 h-6 rounded-full flex items-center justify-center border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Luna_Sky</p>
+<p class="text-xs text-on-surface-variant font-medium">Digital Artist</p>
+</div>
+<button class="w-full py-2 bg-primary-container/20 text-primary font-bold rounded-full text-sm hover:bg-primary-container/30 transition-colors">Add Friend</button>
+</div>
+<!-- User Card 2 (Highlight) -->
+<div class="col-span-1 row-span-2 bg-gradient-to-br from-surface-container to-surface-container-highest p-6 rounded-lg flex flex-col justify-between shadow-[0_10px_40px_rgba(181,0,88,0.05)] border border-outline-variant/10">
+<div class="space-y-4">
+<div class="flex -space-x-3">
+<img alt="Mutual" class="w-10 h-10 rounded-full border-2 border-surface-container shadow-sm" data-alt="Small avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1t8b685WqohpcdHsq732NbIW126dHYJMWyjlyG3sR4z0eZayxAVrMczr3Ec9CR8R7o0v9aCUYpf1-gHpWEjNbEyQ_iExFwFbsLKhgTVZ7-pHvJmGzXW8qcfdMxIFQ9LbwejqsIi0FWjD5T4uDB09HDD4f_0Od7ME-N4pRgeL8j2aY71n5SMdeBRQjJljcAqvS9eWJ-OprLbXE4L-yGMh7J7AECWEHHXuF0u88mDuNADVAD7xmDYnFzVuwYw9nebFLYHAmz4PWaok6"/>
+<img alt="Mutual" class="w-10 h-10 rounded-full border-2 border-surface-container shadow-sm" data-alt="Small avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Z_coXafb5_qjIwDJT9viDhKbpYr8G3EzkEXoZMwef5iKW0SrEnxDwHS86ADjzyBknwVKmUByExnPjaCsmJQOzCTgrBiUi-gf6ULOGzKrfHNJFWCIZJReaf3aszipAOCrWoLQxsY5fSFsRI8flqWTJ80l-7NSBpqI7DQF-WtZS73S06HYfNSAHk_pgLbBj6G1GPDrpGYe2pZ32HGNN0kl7fjY_GMPnzymXGwUjcnbgXFh2nuuvahDO1PK7lGpleLIK8WRqoe2EpU1"/>
+</div>
+<h3 class="font-headline font-extrabold text-2xl text-on-surface leading-tight">Neon_Pulse</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/50 text-[10px] font-bold rounded-md uppercase tracking-wider text-on-surface-variant">Music</span>
+<span class="px-2 py-1 bg-white/50 text-[10px] font-bold rounded-md uppercase tracking-wider text-on-surface-variant">Gaming</span>
+</div>
+</div>
+<button class="mt-6 w-full py-3 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/20 active:scale-95 transition-transform">Add Friend</button>
+</div>
+<!-- User Card 3 -->
+<div class="col-span-1 bg-surface-container-lowest p-5 rounded-lg flex flex-col items-center text-center space-y-3 shadow-[0_10px_30px_rgba(74,33,53,0.03)] border border-outline-variant/10">
+<img alt="User" class="w-20 h-20 rounded-full object-cover" data-alt="Portrait of a young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYDE3vs0o8Sogsae_3DzGXr0G1_BQ8DGsuesO8pnoJKb_ACnivfi4iRawk0iXDX6NQiK_osuXOnncJ3jytQH3znskhNHr0vOfoTz7w_j1bNVXOAi8XBOle18AZBWFTVtzxOYLYHlrqluxkkcGQ70CaZQDpZ8kCH1kmZpanjlnbgydvRJbQmAeUX1K8EtkctWxsfqwMDExEQ3Gyj6Or507k4TmKE_1voYY9E2HA6UUq_lJdooEwDvUMmCX7clLauf8hOMh_DIitXi72"/>
+<div>
+<p class="font-headline font-bold text-on-surface">Cyber_Zen</p>
+<p class="text-xs text-on-surface-variant font-medium">1.2km away</p>
+</div>
+<button class="w-full py-2 bg-primary-container/20 text-primary font-bold rounded-full text-sm hover:bg-primary-container/30 transition-colors">Add Friend</button>
+</div>
+</div>
+</section>
+<!-- Vertical List - Active Vibe -->
+<section class="space-y-4">
+<div class="flex justify-between items-center px-1">
+<h2 class="font-headline font-bold text-xl text-on-surface">Active Now</h2>
+<button class="text-primary font-bold text-sm">View all</button>
+</div>
+<div class="space-y-3">
+<!-- List Item 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg transition-all hover:bg-surface-container shadow-sm group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="User" class="w-12 h-12 rounded-full border-2 border-primary-container/30" data-alt="User headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm9W0PfvSrtkc0KuV11aAxvXj2c2CkR96XEVULv4qyyHilJnohB2bIuTSmTJABHebhpDaPZbN8JmRpy_yKM1wKkug7pZowTRznHoW9J5LruxJl9uJsa2ClJaxraKcpMSccOzgndzBRXqj7D9XMGrXj6gXqjv23UpoL9fXkNVsXAgGmikZJ-38YAqxBexTYfGf1mw30JCwTEeP4_a9sgTTjyfknaSxD7Z_WoZIlnrmkZaIUKiZXH-RbpgoSUyUvM6z28C-DFUVGfqph"/>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-surface-container-low"></div>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-bold text-on-surface">Astra_Boy</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1">Vibing to lo-fi beats right now</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</button>
+</div>
+<!-- List Item 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg transition-all hover:bg-surface-container shadow-sm group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="User" class="w-12 h-12 rounded-full" data-alt="User headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkloiQEB4K3ABbfSDsobipOzHgdqNt0OEhUetA82Iy1GgqEhqXrwi693ZaJSPgOoqtsewUGaW8NoIR_DHh9Y6EekP-M3DLDFL-kxsVia1cgp-UceICZGNYuAklFq60-prjwkJE2QCIVV0aP4F-8ThfILo0f96P8BHGOOXch-VlmiN1UNx5UZ_fcSxxvQM0d92TBVVPS4p_Jit5VD0sSUtRNXRnZGUs2G-x4cye8YyYOePkuW8Wba69bb5Y3Q_Wt_KrI3IITFV7JfPq"/>
+</div>
+<div>
+<span class="font-bold text-on-surface">Maya_The_Bee</span>
+<p class="text-sm text-on-surface-variant line-clamp-1">Anyone up for a late-night chat?</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</button>
+</div>
+<!-- List Item 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg transition-all hover:bg-surface-container shadow-sm group">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="User" class="w-12 h-12 rounded-full border-2 border-primary-container/30" data-alt="User headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfyYVQ39JZCmuxYNZvWJE7x6ST1sVNEMC_dYGHbRmFPPOy1jn_bomsMl_iPbeEQKUqpWY_-2cT4LbQUt8sUO0DSMksr0GslJ6n0HqLXW5tIFVFf2NyET63CiUnhXYIl4dG8hpwZh2ZSs26CuStj4k8MCRgmE7fFXG4_lOa-f_0Fut5pL4mvc4X0s6FejJ7OepaPC422hPutykUG0Dsh0BRXOe_ue4g6RLUyavgr5Sz8lWifDpVDPMW03vUXQFemNQjg0_vW-yzmW4f"/>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<span class="font-bold text-on-surface">Drift_Racer</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1">Speed is everything. 🏁</p>
+</div>
+</div>
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#fff4f6]/80 dark:bg-[#1a1114]/80 backdrop-blur-xl shadow-[0_-10px_40px_rgba(181,0,88,0.08)] rounded-t-[2.5rem]">
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#fff4f6]/50 p-2 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Chats</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white rounded-full px-5 py-2 scale-110 shadow-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Friends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#fff4f6]/50 p-2 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Support</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#fff4f6]/50 p-2 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person_2">person_2</span>
+<span class="font-['Inter'] text-[11px] font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>
