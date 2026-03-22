@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anon Chat - User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#220214",
+              "on-primary": "#ffeff1",
+              "on-tertiary-container": "#321786",
+              "on-primary-container": "#4c0021",
+              "surface-container-highest": "#ffd0e3",
+              "primary-fixed-dim": "#ff5290",
+              "secondary-container": "#ffc0db",
+              "primary-fixed": "#ff709e",
+              "on-tertiary-fixed": "#180058",
+              "background": "#fff4f6",
+              "error": "#b31b25",
+              "primary-container": "#ff709e",
+              "on-secondary-fixed": "#670843",
+              "tertiary-fixed": "#b4a4ff",
+              "on-secondary": "#ffeff3",
+              "on-secondary-container": "#802157",
+              "secondary": "#99366c",
+              "tertiary": "#5e4ab3",
+              "on-background": "#4a2135",
+              "surface-container-high": "#ffd8e7",
+              "on-surface": "#4a2135",
+              "secondary-dim": "#8a2a60",
+              "surface-bright": "#fff4f6",
+              "on-surface-variant": "#7d4d63",
+              "surface-variant": "#ffd0e3",
+              "tertiary-container": "#b4a4ff",
+              "inverse-primary": "#ff4a8d",
+              "outline-variant": "#d79db6",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "secondary-fixed": "#ffc0db",
+              "inverse-on-surface": "#c58da5",
+              "on-primary-fixed-variant": "#5d002a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#000000",
+              "outline": "#9b687f",
+              "tertiary-fixed-dim": "#a794ff",
+              "primary": "#b50058",
+              "surface": "#fff4f6",
+              "error-dim": "#9f0519",
+              "secondary-fixed-dim": "#ffabd1",
+              "error-container": "#fb5151",
+              "primary-dim": "#9f004d",
+              "surface-container-low": "#ffecf2",
+              "on-error": "#ffefee",
+              "tertiary-dim": "#523da6",
+              "surface-tint": "#b50058",
+              "surface-container": "#ffe0eb",
+              "on-error-container": "#570008",
+              "on-tertiary": "#f6f0ff",
+              "surface-dim": "#ffc4dd",
+              "on-tertiary-fixed-variant": "#3b238f"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .neon-glow {
+        box-shadow: 0 0 20px rgba(181, 0, 88, 0.15);
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fff4f6;
+      }
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#fff4f6] dark:bg-[#1a0b12] docked full-width top-0 z-50 flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e]" data-icon="security">security</span>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-2xl font-black text-[#b50058] dark:text-[#ff709e] tracking-tighter">Anon Chat</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-[#ffd0e3]/50 dark:hover:bg-[#4a2135]/50 transition-colors active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e]" data-icon="light_mode">light_mode</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-6 pt-8 space-y-8">
+<!-- Profile Hero Section (Bento Style) -->
+<section class="grid grid-cols-1 gap-4">
+<!-- Profile Card -->
+<div class="bg-surface-container-lowest rounded-lg p-8 flex flex-col items-center text-center shadow-[0_10px_30px_rgba(74,33,53,0.04)] relative overflow-hidden">
+<!-- Background Pulse Decoration -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+<div class="relative mb-6">
+<div class="w-28 h-28 rounded-full border-4 border-primary-container p-1 ring-4 ring-surface-container">
+<img alt="Profile Avatar" class="w-full h-full object-cover rounded-full" data-alt="Modern stylized female avatar in neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxKkknM1O14cw7VcKSMhEm7jRjW2AHtEj_wmoWhHLABQ-anc9LERgZrZkGfPtpUEUXL7AZohpsJIurOeJftE7bXoerJKlPRdEN_A41xEe7oIsYsvxIBAc77sapmfJVqXli96EXn-AesD1UgcK6KZ26YtruZ0Knr9bkwJlKphzeLkkLBAnYyNUrKr_s8hW5kXUuyBYP2HXSeXljh8p39t8ZRMRcW4efXAXRyRCY-oGPRRa_t7MaMNo8GAoPOI5zr96hkcUZIW7ld1zN"/>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full border-4 border-surface-container-lowest">
+<span class="material-symbols-outlined text-sm block" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface mb-2">cyber_daisy</h2>
+<p class="text-on-surface-variant max-w-[240px] leading-relaxed italic mb-6">"Ghosting is my primary love language. Catch me in the encrypted voids."</p>
+<!-- Quick Stats -->
+<div class="flex gap-4 w-full justify-center">
+<div class="bg-surface-container-low px-4 py-3 rounded-2xl flex-1 border border-outline-variant/10">
+<span class="block text-2xl font-bold text-primary">1.2k</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Messages</span>
+</div>
+<div class="bg-surface-container-low px-4 py-3 rounded-2xl flex-1 border border-outline-variant/10">
+<span class="block text-2xl font-bold text-tertiary">24</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Groups</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacy & Security Bento -->
+<section class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shield_person">shield_person</span>
+                Privacy Shields
+            </h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Ghost Mode Toggle -->
+<div class="bg-surface-container rounded-lg p-5 flex flex-col justify-between h-40 group transition-all hover:bg-surface-container-high cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="visibility_off" style="font-variation-settings: 'FILL' 1;">visibility_off</span>
+</div>
+<div class="w-10 h-5 bg-primary rounded-full relative p-1 flex items-center justify-end">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<div>
+<span class="block font-bold text-on-surface">Ghost Mode</span>
+<span class="text-[11px] text-on-surface-variant">Hide online status globally</span>
+</div>
+</div>
+<!-- Auto-Destruct Toggle -->
+<div class="bg-surface-container-low rounded-lg p-5 flex flex-col justify-between h-40 border border-outline-variant/15 group hover:border-primary-container/50 transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="timer" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<div class="w-10 h-5 bg-outline-variant/30 rounded-full relative p-1 flex items-center justify-start">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<div>
+<span class="block font-bold text-on-surface">Auto-Destruct</span>
+<span class="text-[11px] text-on-surface-variant">24h message expiration</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Preference List -->
+<section class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="settings_suggest">settings_suggest</span>
+                Preferences
+            </h3>
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm">
+<!-- Theme Row -->
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+</div>
+<div>
+<span class="block font-semibold">Theme Pulse</span>
+<span class="text-xs text-on-surface-variant">Current: Vibrant Neon</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="h-[1px] bg-outline-variant/10 mx-5"></div>
+<!-- Encryption Row -->
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div>
+<span class="block font-semibold">End-to-End Encryption</span>
+<span class="text-xs text-on-surface-variant">Verified RSA-4096 Keys</span>
+</div>
+</div>
+<span class="text-[10px] font-bold text-primary bg-primary-container/20 px-2 py-1 rounded-full uppercase">Active</span>
+</div>
+<div class="h-[1px] bg-outline-variant/10 mx-5"></div>
+<!-- Bio Row -->
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-on-surface/5 flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+<div>
+<span class="block font-semibold">Digital Persona</span>
+<span class="text-xs text-on-surface-variant">Update your public bio</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="pb-12">
+<button class="w-full p-5 rounded-lg bg-error-container/10 border border-error/20 flex items-center justify-center gap-3 text-error group hover:bg-error hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-bold uppercase tracking-widest text-sm">Vanish Forever</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="bg-[#fff4f6]/80 dark:bg-[#1a0b12]/80 backdrop-blur-xl fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 rounded-t-[2.5rem] shadow-[0_-10px_30px_rgba(74,33,53,0.06)]">
+<!-- DMs -->
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#ffd0e3]/40 p-3 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">DMs</span>
+</a>
+<!-- Groups -->
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#ffd0e3]/40 p-3 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Groups</span>
+</a>
+<!-- Profile (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white rounded-full p-3 mb-1 animate-pulse-slow active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-[#ffd0e3]/40 p-3 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+</body></html>
