@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anon Chat - Secure Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#220214",
+              "on-primary": "#ffeff1",
+              "on-tertiary-container": "#321786",
+              "on-primary-container": "#4c0021",
+              "surface-container-highest": "#ffd0e3",
+              "primary-fixed-dim": "#ff5290",
+              "secondary-container": "#ffc0db",
+              "primary-fixed": "#ff709e",
+              "on-tertiary-fixed": "#180058",
+              "background": "#fff4f6",
+              "error": "#b31b25",
+              "primary-container": "#ff709e",
+              "on-secondary-fixed": "#670843",
+              "tertiary-fixed": "#b4a4ff",
+              "on-secondary": "#ffeff3",
+              "on-secondary-container": "#802157",
+              "secondary": "#99366c",
+              "tertiary": "#5e4ab3",
+              "on-background": "#4a2135",
+              "surface-container-high": "#ffd8e7",
+              "on-surface": "#4a2135",
+              "secondary-dim": "#8a2a60",
+              "surface-bright": "#fff4f6",
+              "on-surface-variant": "#7d4d63",
+              "surface-variant": "#ffd0e3",
+              "tertiary-container": "#b4a4ff",
+              "inverse-primary": "#ff4a8d",
+              "outline-variant": "#d79db6",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "secondary-fixed": "#ffc0db",
+              "inverse-on-surface": "#c58da5",
+              "on-primary-fixed-variant": "#5d002a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#000000",
+              "outline": "#9b687f",
+              "tertiary-fixed-dim": "#a794ff",
+              "primary": "#b50058",
+              "surface": "#fff4f6",
+              "error-dim": "#9f0519",
+              "secondary-fixed-dim": "#ffabd1",
+              "error-container": "#fb5151",
+              "primary-dim": "#9f004d",
+              "surface-container-low": "#ffecf2",
+              "on-error": "#ffefee",
+              "tertiary-dim": "#523da6",
+              "surface-tint": "#b50058",
+              "surface-container": "#ffe0eb",
+              "on-error-container": "#570008",
+              "on-tertiary": "#f6f0ff",
+              "surface-dim": "#ffc4dd",
+              "on-tertiary-fixed-variant": "#3b238f"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 244, 246, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .dark .glass-panel {
+            background: rgba(26, 11, 18, 0.7);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header Navigation Shell (Suppressed Nav, but active Theme Toggle) -->
+<header class="flex justify-between items-center w-full px-6 h-20 fixed top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-headline font-black text-2xl tracking-tighter text-primary">Anon Chat</span>
+</div>
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container-low hover:bg-surface-container-high transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant">light_mode</span>
+</button>
+</header>
+<main class="flex-1 flex items-center justify-center px-4 py-24 sm:py-32 relative overflow-hidden">
+<!-- Abstract Background Shapes for "Neon Sanctuary" vibe -->
+<div class="absolute top-[-10%] left-[-5%] w-[40vw] h-[40vw] bg-primary-container/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-tertiary/15 blur-[120px] rounded-full"></div>
+<!-- Signup Container -->
+<div class="w-full max-w-lg z-10">
+<div class="glass-panel p-8 sm:p-12 rounded-lg shadow-[0_20px_60px_-15px_rgba(74,33,53,0.1)] border border-outline-variant/10">
+<div class="mb-10 text-center">
+<h1 class="font-headline font-extrabold text-4xl sm:text-5xl text-on-surface tracking-tight mb-3">Create Account</h1>
+<p class="text-on-surface-variant font-medium">Join the sanctuary. Stay anonymous, stay safe.</p>
+</div>
+<form class="space-y-6">
+<!-- Bento-style Input Layout -->
+<div class="grid grid-cols-1 gap-4">
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold uppercase tracking-widest text-on-surface-variant/80 ml-1">Username</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">person</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-0 focus:ring-2 focus:ring-primary/30 rounded-md transition-all placeholder:text-on-surface-variant/40 text-on-surface font-medium" placeholder="shadow_user" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold uppercase tracking-widest text-on-surface-variant/80 ml-1">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">alternate_email</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-0 focus:ring-2 focus:ring-primary/30 rounded-md transition-all placeholder:text-on-surface-variant/40 text-on-surface font-medium" placeholder="privacy@anon.chat" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold uppercase tracking-widest text-on-surface-variant/80 ml-1">Password</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">lock</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-0 focus:ring-2 focus:ring-primary/30 rounded-md transition-all placeholder:text-on-surface-variant/40 text-on-surface font-medium" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-sm font-semibold uppercase tracking-widest text-on-surface-variant/80 ml-1">Confirm</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-primary transition-colors">verified_user</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-0 focus:ring-2 focus:ring-primary/30 rounded-md transition-all placeholder:text-on-surface-variant/40 text-on-surface font-medium" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full py-5 bg-gradient-to-br from-primary to-primary-container text-white font-headline font-bold text-lg rounded-full shadow-[0_10px_25px_-5px_rgba(181,0,88,0.3)] hover:shadow-[0_15px_30px_-5px_rgba(181,0,88,0.4)] active:scale-95 transition-all duration-200" type="submit">
+                            Create Account
+                        </button>
+</div>
+<div class="relative py-4 flex items-center">
+<div class="flex-grow border-t border-outline-variant/20"></div>
+<span class="flex-shrink mx-4 text-on-surface-variant/60 font-label text-xs uppercase tracking-tighter">Already a member?</span>
+<div class="flex-grow border-t border-outline-variant/20"></div>
+</div>
+<div class="text-center">
+<a class="inline-flex items-center gap-2 text-primary font-headline font-bold hover:text-primary-dim transition-colors group" href="#">
+<span>Login to your sanctuary</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</form>
+<!-- High-tech security badge -->
+<div class="mt-10 flex items-center justify-center gap-6 px-4 py-3 bg-tertiary-container/30 rounded-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">enhanced_encryption</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-tertiary">End-to-End Encrypted</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-tertiary/20"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">visibility_off</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-tertiary">Zero Logs Policy</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Identity -->
+<footer class="w-full py-8 text-center text-on-surface-variant/40 text-xs font-label uppercase tracking-widest mt-auto">
+        © 2024 Anon Chat Protocol • Pulse Design System
+    </footer>
+</body></html>
