@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anon Chat Support - The Neon Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#ff709e",
+              "on-background": "#4a2135",
+              "inverse-surface": "#220214",
+              "surface-container-highest": "#ffd0e3",
+              "surface": "#fff4f6",
+              "outline": "#9b687f",
+              "on-error": "#ffefee",
+              "error-container": "#fb5151",
+              "on-surface-variant": "#7d4d63",
+              "surface-bright": "#fff4f6",
+              "primary": "#b50058",
+              "on-secondary-fixed": "#670843",
+              "surface-container-high": "#ffd8e7",
+              "secondary-fixed-dim": "#ffabd1",
+              "on-surface": "#4a2135",
+              "tertiary-fixed": "#b4a4ff",
+              "inverse-primary": "#ff4a8d",
+              "on-tertiary-fixed-variant": "#3b238f",
+              "on-tertiary": "#f6f0ff",
+              "secondary-container": "#ffc0db",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "secondary-dim": "#8a2a60",
+              "tertiary-fixed-dim": "#a794ff",
+              "on-error-container": "#570008",
+              "on-tertiary-container": "#321786",
+              "tertiary-dim": "#523da6",
+              "tertiary-container": "#b4a4ff",
+              "surface-variant": "#ffd0e3",
+              "on-secondary": "#ffeff3",
+              "error-dim": "#9f0519",
+              "tertiary": "#5e4ab3",
+              "surface-container": "#ffe0eb",
+              "on-secondary-container": "#802157",
+              "primary-container": "#ff709e",
+              "background": "#fff4f6",
+              "primary-fixed-dim": "#ff5290",
+              "primary-dim": "#9f004d",
+              "secondary-fixed": "#ffc0db",
+              "on-primary": "#ffeff1",
+              "inverse-on-surface": "#c58da5",
+              "outline-variant": "#d79db6",
+              "on-primary-container": "#4c0021",
+              "secondary": "#99366c",
+              "on-tertiary-fixed": "#180058",
+              "on-primary-fixed": "#000000",
+              "on-primary-fixed-variant": "#5d002a",
+              "surface-container-low": "#ffecf2",
+              "error": "#b31b25",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#ffc4dd",
+              "surface-tint": "#b50058"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fff4f6;
+      }
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff4f6] dark:bg-[#1a0f14] opacity-80 backdrop-blur-md flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#b50058] dark:text-[#ff709e] hover:bg-[#ffd0e3]/20 dark:hover:bg-[#ff709e]/10 transition-colors active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-2xl font-black text-[#b50058] dark:text-[#ff709e] italic font-['Plus_Jakarta_Sans'] tracking-tight">Anon Chat</h1>
+</div>
+<div class="flex items-center gap-4">
+<!-- Theme Toggle -->
+<button class="w-12 h-6 rounded-full bg-surface-container-high relative flex items-center px-1 transition-colors">
+<div class="w-4 h-4 bg-primary rounded-full shadow-sm shadow-primary/20"></div>
+<span class="material-symbols-outlined text-[12px] absolute right-2 text-on-surface-variant">dark_mode</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up of a friendly male user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5UaPrOySjhrlZC0SBIelENlj3OYYun4NRZ9-0F1JO01q3yC18ziZugYNAU7i8dFK6KcoDHh7kYnLgPqbIOtOsScGlH9QrBniELoxuS2JSnpJ96dpuZMECIc-e2OO2atP5uluN9fXQ2jlEOY7NrHm78Dw6jRZQP8BmmV-2ja8GSDpRa6mmv46FuBkz0B5Xsljs5_jVCgulF-16kB--KrUMRzO-EHmoNa0yjv6gAzxa9YpiUCE2iTOakuknupsN-unzV-8B6Cj5cCRI"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto overflow-x-hidden">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary to-primary-container p-8 md:p-16 text-white shadow-2xl shadow-primary/20">
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold tracking-widest uppercase mb-6 font-body">Support Sanctuary</span>
+<h2 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight font-headline">How can we protect your pulse today?</h2>
+<div class="relative max-w-md">
+<input class="w-full bg-white/10 border-none backdrop-blur-lg rounded-xl px-6 py-4 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/30 transition-all font-body" placeholder="Search for privacy, features, or help..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-white/60">search</span>
+</div>
+</div>
+<!-- Abstract Background Pulse -->
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-[100px]"></div>
+<div class="absolute right-20 bottom-10 w-40 h-40 bg-tertiary/30 rounded-full blur-[60px]"></div>
+</div>
+</section>
+<!-- Bento Grid Features -->
+<section class="mb-20">
+<h3 class="text-3xl font-bold mb-10 text-on-surface font-headline tracking-tight">Core Pillars</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Feature: E2E Encryption -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-lg bg-surface-container-low p-8 transition-all hover:bg-surface-container-high">
+<div class="flex flex-col h-full justify-between">
+<div>
+<div class="w-14 h-14 bg-tertiary-container text-on-tertiary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h4 class="text-2xl font-extrabold mb-4 font-headline">End-to-End Encryption</h4>
+<p class="text-on-surface-variant max-w-md leading-relaxed font-body">Your words are yours alone. Our proprietary Neon-Shield protocol ensures that messages are encrypted locally on your device before they ever touch the pulse of the network.</p>
+</div>
+<div class="mt-8">
+<button class="flex items-center gap-2 font-bold text-tertiary hover:gap-4 transition-all uppercase tracking-widest text-xs font-label">
+                                Read Whitepaper <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[200px]">verified_user</span>
+</div>
+</div>
+<!-- Feature: Incognito Mode -->
+<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-between group transition-all hover:bg-surface-container-high border-b-4 border-primary/20">
+<div>
+<div class="w-14 h-14 bg-primary-container text-on-primary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">visibility_off</span>
+</div>
+<h4 class="text-xl font-bold mb-3 font-headline">Incognito Mode</h4>
+<p class="text-on-surface-variant text-sm font-body">Vanishing history and no-trace footprints. Perfect for the most sensitive pulses.</p>
+</div>
+<div class="mt-6">
+<span class="text-[10px] font-black uppercase tracking-widest text-primary/50 font-label">Status: Active</span>
+</div>
+</div>
+<!-- Feature: Global Communities -->
+<div class="bg-surface-container rounded-lg p-8 flex flex-col justify-between group transition-all hover:bg-surface-container-high">
+<div>
+<div class="w-14 h-14 bg-secondary-container text-on-secondary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">public</span>
+</div>
+<h4 class="text-xl font-bold mb-3 font-headline">Global Communities</h4>
+<p class="text-on-surface-variant text-sm font-body">Connect anonymously with themed lounges around the globe without revealing your identity.</p>
+</div>
+<div class="mt-6 flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-gray-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-gray-300"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-gray-400"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface flex items-center justify-center bg-primary-container text-[10px] font-bold text-white">+12k</div>
+</div>
+</div>
+<!-- Large Feature: AI Moderation -->
+<div class="md:col-span-2 bg-inverse-surface text-surface rounded-lg p-8 flex flex-col md:flex-row items-center gap-8 overflow-hidden relative">
+<div class="relative z-10 flex-1">
+<h4 class="text-2xl font-extrabold mb-4 font-headline text-primary-container">Smart Safety Shield</h4>
+<p class="text-surface/70 leading-relaxed font-body">Our on-device AI scans for harassment and malicious links without ever uploading your chat data to our servers. Privacy meets proactive protection.</p>
+<button class="mt-6 px-6 py-3 bg-primary-container text-on-primary-container font-bold rounded-full text-sm font-label hover:scale-105 transition-transform active:scale-95">Enable Shield</button>
+</div>
+<div class="w-full md:w-1/2 h-48 bg-surface/5 rounded-2xl backdrop-blur-sm border border-white/10 flex items-center justify-center">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border-4 border-primary-container animate-ping absolute opacity-20"></div>
+<span class="material-symbols-outlined text-6xl text-primary-container">psychology</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="mb-20">
+<div class="text-center mb-12">
+<h3 class="text-3xl font-bold text-on-surface font-headline">Frequently Asked</h3>
+<p class="text-on-surface-variant font-body mt-2">Everything you need to know about the sanctuary.</p>
+</div>
+<div class="max-w-3xl mx-auto space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-low rounded-xl p-6 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-center">
+<h5 class="font-bold text-on-surface font-body">Is my data really deleted?</h5>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 text-sm text-on-surface-variant leading-relaxed hidden group-hover:block">
+                        Yes. When you delete a message or a thread, it is wiped using military-grade zeroing on your local storage and immediately purged from our relay caches.
+                    </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-low rounded-xl p-6 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-center">
+<h5 class="font-bold text-on-surface font-body">How do global communities work?</h5>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 text-sm text-on-surface-variant leading-relaxed hidden group-hover:block">
+                        Global communities are interest-based clusters. You join with a temporary alias that resets every 24 hours to ensure your long-term identity remains hidden.
+                    </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-low rounded-xl p-6 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex justify-between items-center">
+<h5 class="font-bold text-on-surface font-body">Can I recover my account?</h5>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+<div class="mt-4 text-sm text-on-surface-variant leading-relaxed hidden group-hover:block">
+                        Because we store zero personal data (no email, no phone number), account recovery is only possible via your local 24-word recovery phrase. Guard it well!
+                    </div>
+</div>
+</div>
+</section>
+<!-- Contact Support CTA -->
+<section class="text-center bg-surface-container-high rounded-[3rem] py-16 px-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<h3 class="text-3xl font-extrabold mb-4 font-headline">Still have questions?</h3>
+<p class="text-on-surface-variant mb-8 font-body">Our human pulse team is available 24/7 for security emergencies.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-transform font-label flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">mail</span> Contact Support
+                </button>
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold border-2 border-primary/10 hover:bg-primary/5 transition-colors font-label flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">chat</span> Live Help
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-end pb-6 px-4 bg-[#fff4f6]/80 dark:bg-[#1a0f14]/80 backdrop-blur-xl rounded-t-[2.5rem] z-50 shadow-[0_-10px_30px_rgba(74,33,53,0.06)]">
+<!-- Chats -->
+<a class="flex flex-col items-center justify-center text-[#4a2135] dark:text-[#ffd0e3] opacity-50 p-2 hover:opacity-100 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Chats</span>
+</a>
+<!-- Friends -->
+<a class="flex flex-col items-center justify-center text-[#4a2135] dark:text-[#ffd0e3] opacity-50 p-2 hover:opacity-100 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Friends</span>
+</a>
+<!-- Support (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white rounded-full p-3 mb-2 scale-110 shadow-lg shadow-[#ff709e]/30 active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">help_center</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest hidden">Support</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#4a2135] dark:text-[#ffd0e3] opacity-50 p-2 hover:opacity-100 transition-all active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-semibold uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
