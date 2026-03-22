@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Fluid Pulse | The Digital Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#ffecf2",
+              "on-primary-fixed": "#000000",
+              "on-primary-fixed-variant": "#5d002a",
+              "on-tertiary-fixed": "#180058",
+              "on-primary-container": "#4c0021",
+              "outline-variant": "#d79db6",
+              "secondary": "#99366c",
+              "surface-tint": "#b50058",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#ffc4dd",
+              "error": "#b31b25",
+              "tertiary": "#5e4ab3",
+              "surface-container": "#ffe0eb",
+              "tertiary-container": "#b4a4ff",
+              "surface-variant": "#ffd0e3",
+              "on-secondary": "#ffeff3",
+              "error-dim": "#9f0519",
+              "tertiary-dim": "#523da6",
+              "on-tertiary-container": "#321786",
+              "secondary-fixed": "#ffc0db",
+              "on-primary": "#ffeff1",
+              "inverse-on-surface": "#c58da5",
+              "primary-fixed-dim": "#ff5290",
+              "primary-dim": "#9f004d",
+              "primary-container": "#ff709e",
+              "background": "#fff4f6",
+              "on-secondary-container": "#802157",
+              "on-tertiary-fixed-variant": "#3b238f",
+              "on-tertiary": "#f6f0ff",
+              "surface-container-high": "#ffd8e7",
+              "tertiary-fixed": "#b4a4ff",
+              "inverse-primary": "#ff4a8d",
+              "secondary-fixed-dim": "#ffabd1",
+              "on-surface": "#4a2135",
+              "primary": "#b50058",
+              "on-secondary-fixed": "#670843",
+              "on-error-container": "#570008",
+              "secondary-dim": "#8a2a60",
+              "tertiary-fixed-dim": "#a794ff",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "secondary-container": "#ffc0db",
+              "surface": "#fff4f6",
+              "surface-container-highest": "#ffd0e3",
+              "on-background": "#4a2135",
+              "inverse-surface": "#220214",
+              "primary-fixed": "#ff709e",
+              "surface-bright": "#fff4f6",
+              "outline": "#9b687f",
+              "on-surface-variant": "#7d4d63",
+              "on-error": "#ffefee",
+              "error-container": "#fb5151"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fff4f6;
+      }
+      h1, h2, h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .glass-card {
+        background: rgba(255, 244, 246, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-[#fff4f6]/80 dark:bg-neutral-950/80 backdrop-blur-xl z-50 shadow-[0_10px_30px_rgba(74,33,53,0.06)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b50058] text-3xl" data-icon="bubble_chart">bubble_chart</span>
+<span class="text-2xl font-bold tracking-tight text-[#b50058] dark:text-[#ff709e]">The Fluid Pulse</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#b50058] dark:text-[#ff709e] font-bold" href="#">Home</a>
+<a class="text-[#4a2135]/60 dark:text-neutral-400 hover:bg-[#ffd0e3]/50 dark:hover:bg-neutral-800 transition-colors px-3 py-1 rounded-full" href="#">Explore</a>
+<a class="text-[#4a2135]/60 dark:text-neutral-400 hover:bg-[#ffd0e3]/50 dark:hover:bg-neutral-800 transition-colors px-3 py-1 rounded-full" href="#">Security</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="light_mode">light_mode</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold overflow-hidden">
+<img alt="Profile" data-alt="User profile avatar icon placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_bdwkuDOLU92BfYAY5VJg4oedDPuKs1IZTSuP8ZATataZcDArta1VLjJrwLTiU_5X1ksr8qG-5t_u5nyJYL6zkfHAONhIb2H2scZFx3yb75Ewhfz-67qzq7Obn10fjeDfaLSQdxzdVnE7Xu3Pm3fEv_ytiYnk3PYHPSk0MVlmjE4uPogEL308IYTyiuP3GK6R8se3Zg6s9Mdg0LMLnO-qKvXv9-2ZayTVStC7jEeTJzGQGTWn2hj5SN3T4hV9VKwNBr6XQjU1JmFt"/>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 space-y-8">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full text-primary font-semibold text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+                    Privacy Protocol v2.4 Active
+                </div>
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-on-surface leading-[1.1]">
+                    The Digital <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Sanctuary</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                    Experience private and secure communication that feels like a premium lounge. No tracking, no noise—just pure human connection in a vibrant neon landscape.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-full shadow-[0_10px_30px_rgba(181,0,88,0.3)] hover:scale-105 transition-transform">
+                        Join the Pulse
+                    </button>
+<button class="px-8 py-4 bg-surface-container-high text-primary font-bold rounded-full hover:bg-surface-container-highest transition-colors">
+                        Watch Demo
+                    </button>
+</div>
+</div>
+<div class="relative group">
+<!-- Floating Decorative Elements -->
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-tertiary/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -right-10 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="relative grid grid-cols-2 gap-4">
+<div class="pt-12">
+<div class="rounded-xl overflow-hidden shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+<img alt="Happy users" class="w-full aspect-[4/5] object-cover" data-alt="Diverse group of friends smiling while using smartphones together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvrdMAXFqRpliqImoAnYTluz2rNSpXai0qiyIhZrXvBawx2PX7Z4HFxr8utNKWj-RizXoSXsKDkIfcXywBhiRVWfy2ZYOqc523usFe_dWlGIACwUFh2ej_xwuoTBl6aU_hg3c13dOlhCOF-2indGYlWW7juKT6v74Y7ZIHBVtiBrhMRRaD0FggzWLlB4F2IyIFADNqUf3FIPydkxZ90KXOgU-BnETKLJa4Ra0W5r4OUEPWhYBlkwLWb6Lo_OG3G4WdYin3NKuHcox1"/>
+</div>
+</div>
+<div class="pb-12">
+<div class="rounded-xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+<img alt="App interface" class="w-full aspect-[4/5] object-cover" data-alt="Young person laughing while looking at a mobile app screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6n08xmuE5vJ3gGhglOOeNzXrx9Rm3VXUqqIfglTTLKNBoCGAzVTXxVhg0tJAQf0aT-amHvjJccIXjwiVVqzFzlj-uG3j4NBbBoLLEoA-J9H7tcHHX_S9bWOWnv3_sEcmBLWeLki1wrQTIyDKIxQKN7UpXJwNdEy6HufVe8_qKa9pzq6jvcHFkE2-TBdY7e0Ceg8AtGvwDZJZCNoKoEyhz0-Jilna3_KaZ9UXhl7B4W1gN0KB3FkHBpOEU5hykABWcCxstzWKvk0HI"/>
+</div>
+</div>
+</div>
+<!-- Bento Card Overlay -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 glass-card p-4 rounded-2xl shadow-xl border border-white/20 w-64">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-container"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-secondary-container"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-tertiary-container"></div>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest">Live Now</p>
+<p class="text-xs font-semibold text-on-surface">12k pulses active</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Features Bento Grid -->
+<section class="py-24 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Built for Total Freedom</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Security doesn't have to be boring. We've redesigned the privacy experience from the ground up.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Feature Card -->
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden group">
+<div class="relative z-10 space-y-4">
+<div class="w-12 h-12 bg-tertiary/10 rounded-2xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h3 class="text-3xl font-bold">End-to-End Encryption</h3>
+<p class="text-on-surface-variant max-w-md">Your messages are your business. Every pulse is encrypted with military-grade protocols that even we can't bypass.</p>
+<ul class="space-y-2 pt-4">
+<li class="flex items-center gap-2 text-sm font-medium"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span> Zero-knowledge architecture</li>
+<li class="flex items-center gap-2 text-sm font-medium"><span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle">check_circle</span> Perfect forward secrecy</li>
+</ul>
+</div>
+<div class="absolute top-0 right-0 w-64 h-full bg-gradient-to-l from-tertiary/5 to-transparent flex items-center justify-center">
+<span class="material-symbols-outlined text-[12rem] text-tertiary/10 rotate-12" data-icon="lock">lock</span>
+</div>
+</div>
+<!-- Small Feature Card 1 -->
+<div class="bg-surface-container-highest p-10 rounded-xl space-y-4 group hover:bg-primary/5 transition-colors">
+<div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="incognito">incognito</span>
+</div>
+<h3 class="text-2xl font-bold">Incognito Mode</h3>
+<p class="text-sm text-on-surface-variant">Self-destructing messages and identity masking for those who prefer to stay in the shadows.</p>
+</div>
+<!-- Small Feature Card 2 -->
+<div class="bg-surface-container-highest p-10 rounded-xl space-y-4 group hover:bg-secondary/5 transition-colors">
+<div class="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<h3 class="text-2xl font-bold">Global Communities</h3>
+<p class="text-sm text-on-surface-variant">Connect with themed sanctuaries around the world without revealing your personal data.</p>
+</div>
+<!-- Medium Feature Card -->
+<div class="md:col-span-2 bg-gradient-to-br from-primary to-primary-container p-1 rounded-xl shadow-lg">
+<div class="bg-surface-container-lowest h-full w-full rounded-[calc(1rem-4px)] p-10 flex flex-col md:flex-row items-center gap-8">
+<div class="space-y-4 flex-1">
+<div class="inline-block px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full">Coming Soon</div>
+<h3 class="text-3xl font-bold text-on-surface">Neon Themes</h3>
+<p class="text-on-surface-variant">Customize your sanctuary with fluid colors and light/dark modes that morph with your local time.</p>
+</div>
+<div class="flex-1 flex justify-center">
+<div class="flex gap-2">
+<div class="w-8 h-24 bg-primary rounded-full blur-[1px] opacity-20"></div>
+<div class="w-8 h-32 bg-secondary rounded-full blur-[1px] opacity-40 -mt-4"></div>
+<div class="w-8 h-24 bg-tertiary rounded-full blur-[1px] opacity-20"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof / Ads Section -->
+<section class="py-20 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto bg-inverse-surface rounded-[2.5rem] p-12 relative">
+<div class="absolute top-0 right-0 w-full h-full opacity-10">
+<div class="grid grid-cols-6 h-full w-full">
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+<div class="border-r border-white/20"></div>
+</div>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 text-white">
+<div class="max-w-md space-y-6">
+<h2 class="text-4xl font-bold leading-tight">Join 2M+ pulses protecting their speech.</h2>
+<p class="text-inverse-on-surface">"The most beautiful secure app I've ever used. It doesn't feel like a tool; it feels like a destination."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+<img alt="Testimonial" data-alt="Close up of a professional man smiling for a profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHa_UxhnssqxeetmyvvssqvSGMUnNEH-kuG9DkGtALBhtohhMQJrrSdG8g3LbXuzOYrjRTHv6oSPx9jcSScEBCm_iQiCjZTbNLBQHYvX88hXqqfr99EPmgigY5yFQNgU5i_slCD0b6PlEmzruOdpbukJ_5a8OMB4XF_C6aenDe8ysRlCSWtuyEOj2P6BaAzWtZtRhEYvohSmy5nj-X_4J3HQy8bQfF68Fds0YH5PxuhC936nInA4WvFaG7SvOIaQzmROEAIgKQjDQ2"/>
+</div>
+<div>
+<p class="font-bold">Julian V.</p>
+<p class="text-xs text-primary-fixed">Tech Ethicist @ PulseLabs</p>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0 grid grid-cols-2 gap-4">
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 w-40 text-center">
+<p class="text-3xl font-black text-primary-container">100%</p>
+<p class="text-[10px] uppercase font-bold tracking-widest opacity-60">Private</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 w-40 text-center translate-y-8">
+<p class="text-3xl font-black text-tertiary-container">0</p>
+<p class="text-[10px] uppercase font-bold tracking-widest opacity-60">Data Leaks</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#ffe0eb] dark:bg-neutral-900 mt-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b50058]" data-icon="bubble_chart">bubble_chart</span>
+<span class="font-bold text-[#b50058]">The Fluid Pulse</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#4a2135]/70 hover:text-[#b50058] transition-colors text-sm Inter tracking-wide underline decoration-transparent hover:decoration-current" href="#">Privacy</a>
+<a class="text-[#4a2135]/70 hover:text-[#b50058] transition-colors text-sm Inter tracking-wide underline decoration-transparent hover:decoration-current" href="#">Terms</a>
+<a class="text-[#4a2135]/70 hover:text-[#b50058] transition-colors text-sm Inter tracking-wide underline decoration-transparent hover:decoration-current" href="#">Safety</a>
+<a class="text-[#4a2135]/70 hover:text-[#b50058] transition-colors text-sm Inter tracking-wide underline decoration-transparent hover:decoration-current" href="#">Contact</a>
+</div>
+<p class="text-[#4a2135]/70 text-sm Inter tracking-wide">© 2024 The Fluid Pulse. Neon Sanctuary Protocol.</p>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden bg-[#fff4f6]/90 dark:bg-neutral-950/90 backdrop-blur-2xl rounded-t-[2.5rem] shadow-[0_-10px_40px_rgba(181,0,88,0.1)]">
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white rounded-2xl p-2 min-w-[64px] scale-110">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[11px] font-medium Inter">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-neutral-500 p-2 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[11px] font-medium Inter">Users</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-neutral-500 p-2 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+<span class="text-[11px] font-medium Inter">Security</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4a2135]/50 dark:text-neutral-500 p-2 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-medium Inter">Account</span>
+</div>
+</nav>
+</body></html>
