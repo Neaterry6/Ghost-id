@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anon Chat - AI Scout</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-dim": "#523da6",
+              "on-tertiary-container": "#321786",
+              "tertiary-container": "#b4a4ff",
+              "surface-variant": "#ffd0e3",
+              "on-secondary": "#ffeff3",
+              "error-dim": "#9f0519",
+              "tertiary": "#5e4ab3",
+              "surface-container": "#ffe0eb",
+              "on-secondary-container": "#802157",
+              "primary-container": "#ff709e",
+              "background": "#fff4f6",
+              "primary-fixed-dim": "#ff5290",
+              "primary-dim": "#9f004d",
+              "secondary-fixed": "#ffc0db",
+              "on-primary": "#ffeff1",
+              "inverse-on-surface": "#c58da5",
+              "on-primary-container": "#4c0021",
+              "outline-variant": "#d79db6",
+              "secondary": "#99366c",
+              "on-tertiary-fixed": "#180058",
+              "on-primary-fixed": "#000000",
+              "on-primary-fixed-variant": "#5d002a",
+              "surface-container-low": "#ffecf2",
+              "error": "#b31b25",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#ffc4dd",
+              "surface-tint": "#b50058",
+              "primary-fixed": "#ff709e",
+              "on-background": "#4a2135",
+              "inverse-surface": "#220214",
+              "surface-container-highest": "#ffd0e3",
+              "surface": "#fff4f6",
+              "outline": "#9b687f",
+              "on-surface-variant": "#7d4d63",
+              "on-error": "#ffefee",
+              "error-container": "#fb5151",
+              "surface-bright": "#fff4f6",
+              "primary": "#b50058",
+              "on-secondary-fixed": "#670843",
+              "surface-container-high": "#ffd8e7",
+              "tertiary-fixed": "#b4a4ff",
+              "inverse-primary": "#ff4a8d",
+              "secondary-fixed-dim": "#ffabd1",
+              "on-surface": "#4a2135",
+              "on-tertiary-fixed-variant": "#3b238f",
+              "on-tertiary": "#f6f0ff",
+              "on-secondary-fixed-variant": "#8c2b61",
+              "secondary-container": "#ffc0db",
+              "secondary-dim": "#8a2a60",
+              "tertiary-fixed-dim": "#a794ff",
+              "on-error-container": "#570008"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff4f6] dark:bg-[#1a0b12] opacity-80 backdrop-blur-xl shadow-[0_10px_30px_rgba(74,33,53,0.06)]">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#b50058] dark:text-[#ff709e]" data-icon="shield_lock">shield_lock</span>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold text-lg tracking-tight text-[#b50058] dark:text-[#ff709e]">Anon Chat</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#4a2135] dark:text-[#ffd0e3] opacity-60 hover:opacity-80 transition-opacity duration-300 active:scale-95 transition-transform duration-200" data-icon="dark_mode">dark_mode</button>
+</div>
+</div>
+<div class="bg-[#ffe0eb] dark:bg-[#2d121f] h-[1px] w-full"></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-32 px-4 md:px-8 max-w-4xl mx-auto min-h-screen flex flex-col">
+<!-- AI Identity Header -->
+<section class="mb-10 text-center">
+<div class="inline-flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-tertiary p-[2px] mb-4">
+<div class="w-full h-full rounded-full bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+</div>
+<h2 class="font-headline text-3xl font-extrabold text-on-surface tracking-tight mb-1">AI Scout</h2>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label text-xs font-semibold uppercase tracking-wider text-on-surface-variant">Secure Intelligence</span>
+</div>
+</div>
+</section>
+<!-- Chat Feed -->
+<div class="flex-grow space-y-6 mb-8 overflow-y-auto hide-scrollbar">
+<!-- Peer (AI) Message -->
+<div class="flex flex-col gap-1 items-start max-w-[85%] group">
+<div class="bg-surface-container-highest text-on-surface p-5 rounded-xl rounded-bl-sm shadow-sm">
+<p class="text-sm leading-relaxed">Hello! I am your <strong>AI Scout</strong>. I can help you navigate encrypted spaces, summarize long threads, or provide secure advice. How can I assist you today?</p>
+</div>
+<span class="text-[10px] text-on-surface-variant font-medium opacity-60 ml-1">AI SCOUT • 10:42 AM</span>
+</div>
+<!-- User Message -->
+<div class="flex flex-col gap-1 items-end ml-auto max-w-[85%] group">
+<div class="bg-gradient-to-br from-primary to-primary-container text-white p-5 rounded-xl rounded-br-sm shadow-[0_8px_20px_rgba(181,0,88,0.15)]">
+<p class="text-sm leading-relaxed">Can you explain how end-to-end encryption works in this app?</p>
+</div>
+<span class="text-[10px] text-on-surface-variant font-medium opacity-60 mr-1">YOU • 10:43 AM</span>
+</div>
+<!-- AI Detailed Response -->
+<div class="flex flex-col gap-1 items-start max-w-[85%] group">
+<div class="bg-surface-container-highest text-on-surface p-5 rounded-xl rounded-bl-sm shadow-sm">
+<div class="space-y-3">
+<p class="text-sm leading-relaxed">In Anon Chat, we use the <strong>Signal Protocol</strong> for all transmissions. This means:</p>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="lock">lock</span>
+<span>Keys are generated locally on your device.</span>
+</li>
+<li class="flex items-start gap-2 text-sm">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="key">key</span>
+<span>Perfect Forward Secrecy ensures even if a key is compromised, previous messages remain unreadable.</span>
+</li>
+</ul>
+</div>
+</div>
+<span class="text-[10px] text-on-surface-variant font-medium opacity-60 ml-1">AI SCOUT • 10:43 AM</span>
+</div>
+<!-- Disclaimer -->
+<div class="flex justify-center py-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/10 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="info">info</span>
+<p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-widest">AI-generated responses. Data processed securely.</p>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="fixed bottom-24 left-0 w-full px-4 md:px-0">
+<div class="max-w-4xl mx-auto">
+<div class="bg-surface-container-low/90 backdrop-blur-xl p-3 rounded-lg shadow-[0_20px_50px_rgba(74,33,53,0.1)] flex items-end gap-3 border border-white/40">
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<div class="flex-grow min-h-[48px] max-h-32 overflow-y-auto py-3 px-1 text-on-surface text-sm focus:outline-none empty:before:content-['Message_AI_Scout...'] empty:before:text-on-surface-variant/50" contenteditable="true"></div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white h-12 w-12 rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-end px-4 pb-6 pt-2 bg-[#fff4f6]/80 dark:bg-[#1a0b12]/80 backdrop-blur-2xl rounded-t-[2.5rem] z-50 shadow-[0_-10px_40px_rgba(181,0,88,0.1)]">
+<!-- Chats -->
+<a class="flex flex-col items-center justify-center text-[#4a2135] dark:text-[#ffd0e3] opacity-50 px-4 py-2 hover:opacity-100 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-['Inter'] text-[11px] font-semibold tracking-wide uppercase mt-1">Chats</span>
+</a>
+<!-- AI Scout (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b50058] to-[#ff709e] text-white rounded-full p-3 shadow-lg transform -translate-y-2 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-tight uppercase mt-0.5">Scout</span>
+</a>
+<!-- Vault -->
+<a class="flex flex-col items-center justify-center text-[#4a2135] dark:text-[#ffd0e3] opacity-50 px-4 py-2 hover:opacity-100 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="enhanced_encryption">enhanced_encryption</span>
+<span class="font-['Inter'] text-[11px] font-semibold tracking-wide uppercase mt-1">Vault</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-[#4a2135] dark:text-[#ffd0e3] opacity-50 px-4 py-2 hover:opacity-100 hover:text-[#b50058] dark:hover:text-[#ff709e] transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-semibold tracking-wide uppercase mt-1">Settings</span>
+</a>
+</nav>
+</body></html>
